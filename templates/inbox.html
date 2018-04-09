@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+            <meta charset="UTF-8">
+            <title>List of received messages</title>
+    </head>
+
+    <body>
+    <p><a href="/write">Write new message</a></p>
+    <p><a href="/sent">View sent</a></p>
+    <p><a href="/inbox">View inbox</a></p>
+
+    <h2>Weather in {{ weather_info.name }}</h2>
+
+    <p>Description: {{ weather_info.weather[0].description }}</p>
+    <p>Current temperature: {{ weather_info.main.temp }} degrees Celsius</p>
+    <p><a href="{{ logout_url }}">Logout</a></p>
+
+    <h1>{{ title }}</h1>
+
+    {% for x in emails %}
+    <p>Sender: {{ x.sender_name }}</p>
+    <p>Sender e-mail: {{ x.sender_email }}</p>
+    <p>Receiver: {{ x.receiver_name }}</p>
+    <p>Receiver e-mail: {{ x.receiver_email }}</p>
+    <p>Text: {{ x.email_text }}</p>
+    <p>Date: {{ x.created }}</p>
+    <br>
+
+    {% endfor %}
+
+    </body>
