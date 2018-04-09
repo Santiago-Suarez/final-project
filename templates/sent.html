@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+            <meta charset="UTF-8">
+            <title>List of sent messages</title>
+    </head>
+
+    <body>
+    <p><a href="/write">Write new message</a></p>
+
+    <h1>Sent messages</h1>
+
+    {% for x in sent %}
+    <p>Sender: {{ x.sender_name }}</p>
+    <p>Sender e-mail: {{ x.sender_email }}</p>
+    <p>Receiver: {{ x.receiver_name }}</p>
+    <p>Receiver e-mail: {{ x.receiver_email }}</p>
+    <p>Text: {{ x.email_text }}</p>
+    <p>Date: {{ x.created }}</p>
+    <br>
+
+    {% endfor %}
+    </body>
