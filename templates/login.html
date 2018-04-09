@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Login | Google</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="logo-block">
+        <img src="assets/img/google-logo.png" class="title-image" width="100px" alt="google logo">
+    </div>
+
+    <div class="title-block">
+        <p class="login-title">One account. All of Bmail.</p>
+    </div>
+
+    <div class="signin-block">
+        <h1 class="login-text">Sign in with your Bmail Account</h1>
+
+        <div class="account-wall">
+            <img class="profile-img" src="assets/img/anonymous.png" alt="profile picture">
+
+            {% if logged_in %}
+            <h1>Welcome {{ user.email() }}!</h1>
+            <a href="/inbox">Go to inbox </a>
+
+            {% else %}
+
+            <form class="form-signin">
+                E-mail <br>
+                <input type="text" name ="email" class="form-control" placeholder="Email" required autofocus>
+                Password: <br>
+                <input type="password" name ="password" class="form-control" placeholder="Password" required>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            </form>
+        </div>
+
+        <a href="#" class="new-account">Create an account </a>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
+
