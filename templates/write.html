@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Compose message</title>
+    </head>
+
+    <body>
+        <h1>Here you can write your message</h1>
+
+        <form method="post">
+            <p>You're sending this mail as {{ sender_email }}</p>
+            <br>
+            <p>Insert the e-mail of the receiver</p>
+            <input name="receiver_email">
+            <p>Type in your message</p>
+            <input name="email_text">
+            <button type="submit">Submit</button>
+
+        </form>
+    </body>
+</html>
